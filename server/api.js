@@ -1,5 +1,5 @@
 import { Router } from "express";
-
+import "dotenv/config";
 import logger from "./utils/logger";
 
 const router = Router();

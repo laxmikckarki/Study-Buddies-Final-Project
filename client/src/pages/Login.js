@@ -1,19 +1,18 @@
-import { defaults } from "pg";
 import React, { useState } from "react";
-// import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    // const history = useHistory();
+     //const history = useHistory();
 
     const handleLogin = (e) => {
       e.preventDefault();
-      if (username === "admin" && password === "password") {
-        history.push("/");
-      } else {
-        alert("Invalid username or password.");
-      }
+    //   if (username === "admin" && password === "password") {
+    //     history.push("/");
+    //   } else {
+    //     alert("Invalid username or password.");
+    //   }
     };
   return (
     <div>
