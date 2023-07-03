@@ -1,13 +1,32 @@
-import { Route, Routes } from "react-router-dom";
-
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
 import About from "./pages/About";
-import Home from "./pages/Home";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 
-const App = () => (
-	<Routes>
-		<Route path="/" element={<Home />} />
-		<Route path="/about/this/site" element={<About />} />
-	</Routes>
+const App = () => {
+  const [hasAccount, setHasAccount] = useState(false);
+
+  return (
+
+		<div>
+      <Header hasAccount={hasAccount} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login setHasAccount={setHasAccount} />} />
+        <Route path="/register" element={<Register setHasAccount={setHasAccount} />} />
+      </Routes>
+	</div>
+  );
+};
+
+const Home = () => (
+  <div>
+    <h1>Welcome to the Main Page</h1>
+    <p>Choose an option from the navigation menu.</p>
+  </div>
 );
 
 export default App;
